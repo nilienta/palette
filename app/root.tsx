@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { ConfigProvider, Flex } from "antd";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -42,7 +43,43 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#7686ca",
+          colorInfo: "#7686ca",
+          colorBgBase: "#fff2e9",
+          colorSuccess: "#42bd94",
+          colorError: "#ef5252",
+        },
+        components: {
+          Menu: {
+            itemPaddingInline: 12,
+            iconMarginInlineEnd: 0,
+          },
+          Segmented: {
+            itemColor: "gray",
+            itemSelectedColor: "white",
+            itemSelectedBg: "#7686ca",
+            trackBg: "#fff2e9",
+          },
+        },
+      }}
+    >
+      <Flex vertical align="center">
+        <Outlet />
+      </Flex>
+    </ConfigProvider>
+  );
+}
+
+export function HydrateFallback() {
+  return (
+    <main className="pt-16 p-4 container mx-auto">
+      <h1>Loading...</h1>
+    </main>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
