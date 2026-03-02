@@ -1,3 +1,5 @@
+import { Typography } from "antd";
+
 export default function ColorQuest() {
-  return <h1>Color Quest</h1>;
+  return <Typography.Title level={2}>Color Quest</Typography.Title>;
 }

@@ -1,6 +1,6 @@
-import { Outlet, useLocation, useNavigate, useNavigation } from "react-router";
-import { Flex, Menu, Segmented, Typography, type MenuProps } from "antd";
-import { useEffect, useState } from "react";
+import { Outlet, useNavigate, useNavigation } from "react-router";
+import { Segmented, Typography, type MenuProps } from "antd";
+
 import { MailOutlined } from "@ant-design/icons";
 
 const items: MenuProps["items"] = [
@@ -26,44 +26,21 @@ const items: MenuProps["items"] = [
   },
 ];
 
+// TODO: apply items
 export default function TabsNavigation() {
   const navigation = useNavigation();
   const navigate = useNavigate();
-  const location = useLocation();
-  const [current, setCurrent] = useState(location.pathname.substring(1) || "");
-
-  useEffect(() => {
-    const path = location.pathname.substring(1);
-    if (path) {
-      setCurrent(path);
-    }
-  }, [location.pathname]);
-
-  const onClick: MenuProps["onClick"] = (e) => {
-    setCurrent(e.key);
-    navigate(e.key);
-  };
 
   return (
-    <>
+    <div className="max-w-3xl w-full h-min-screen mx-auto mt-4 mb-[98px]">
       <Typography.Title level={1} className="text-center">
         Лидия Лайф Колор
       </Typography.Title>
-      <Menu
-        onClick={onClick}
-        selectedKeys={[current]}
-        mode="horizontal"
-        items={items}
-        classNames={{
-          root: "w-full fixed bottom-0 z-50 justify-center",
-          item: "font-bold uppercase flex justify-center",
-        }}
-      />
-      <Flex className="w-full flex justify-center fixed bottom-0 z-50 bg-bg">
+      <div className="flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg">
         <Segmented
           onChange={(key) => navigate(key)}
           classNames={{
-            item: "font-bold uppercase flex justify-center",
+            item: "font-bold uppercase",
           }}
           options={[
             {
@@ -112,17 +89,13 @@ export default function TabsNavigation() {
             },
           ]}
         />
-      </Flex>
+      </div>
 
       <div
-        className={
-          navigation.state === "loading"
-            ? "max-w-3xl mx-auto opacity-50"
-            : "max-w-3xl mx-auto"
-        }
+        className={navigation.state === "loading" ? "opacity-50 mx-4" : "mx-4"}
       >
         <Outlet />
       </div>
-    </>
+    </div>
   );
 }

@@ -1,3 +1,4 @@
+import { Flex, Typography } from "antd";
 import type { Route } from "./+types/home";
 import { getGames } from "~/data";
 import Card from "~/ui/Card/Card";
@@ -19,21 +20,23 @@ export async function loader() {
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
-    <>
-      <p>
+    <div className="flex flex-col gap-2">
+      <Typography.Text>
         👋 Всем привет! Это сообщество посвящено настольным играм ручной работы,
-        созданным для того, чтобы делать процесс раскрашивания ещё интереснее и
-        увлекательнее! 🎲🎨 Игры разработаны для продвижения раскрасок Hachette
-        Disney от Лидии Life and Colouring и позволяют не просто раскрашивать, а
-        превращать это в настоящую игру, полную творчества и веселья.
-        Присоединяйтесь, чтобы играть, раскрашивать и создавать свои маленькие
-        шедевры! 🌟
-      </p>
-      <div className="flex flex-wrap justify-center m-4">
+        созданны для того, чтобы делать процесс раскрашивания ещё интереснее и
+        увлекательнее!
+      </Typography.Text>
+      <Typography.Text>
+        🎲 Игры разработаны для продвижения раскрасок Hachette Disney и
+        позволяют не просто раскрашивать, а превращать это в настоящую игру,
+        полную творчества и веселья.
+      </Typography.Text>
+
+      <div className="flex flex-wrap justify-center ">
         {loaderData.map((game) => (
           <Card key={game.id} {...game} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

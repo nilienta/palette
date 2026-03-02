@@ -1,3 +1,5 @@
+import { Typography } from "antd";
+
 export default function Advent() {
-  return <h1>Advent</h1>;
+  return <Typography.Title level={2}>Advent</Typography.Title>;
 }

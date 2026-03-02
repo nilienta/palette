@@ -14,7 +14,7 @@ export default function Card({
   return (
     <>
       <div className="flex overflow-hidden bg-white rounded-lg shadow-lg w-full mt-2">
-        <div className="w-1/3 bg-cover bg-landscape">
+        <div className="w-1/3 flex">
           <img src={imgsSrc[0]} />
         </div>
         <div className="w-2/3 p-4">

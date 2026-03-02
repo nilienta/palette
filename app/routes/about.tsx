@@ -1,13 +1,15 @@
+import { Typography } from "antd";
+
 export default function About() {
   return (
     <>
-      <h1>Обо мне</h1>
-      <p>
+      <Typography.Title level={2}>Обо мне</Typography.Title>
+      <Typography.Text>
         Привет! Меня зовут Лидия. Я раскрашиваю с 2023 года. Я создаю игры,
         Адвенты, трекеры для раскрасок. В 2025 году сбылась моя мечта, я ушла на
         удаленную работу. Если ты творческий человек, давай творить вместе.
-      </p>
-      <h2>Ссылки</h2>
+      </Typography.Text>
+      <Typography.Title level={3}>Ссылки</Typography.Title>
       <ul>
         <li>
           <a href="https://t.me/Ic7ogViqKSg2ZDgy">Телеграмм канал</a>

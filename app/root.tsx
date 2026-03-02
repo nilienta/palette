@@ -47,22 +47,22 @@ export default function App() {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#7686ca",
-          colorInfo: "#7686ca",
-          colorBgBase: "#fff2e9",
-          colorSuccess: "#42bd94",
-          colorError: "#ef5252",
+          colorPrimary: "var(--color-primary)",
+          colorInfo: "var(--color-info)",
+          colorBgBase: "var(--color-bg)",
+          colorSuccess: "var(--color-success)",
+          colorError: "var(--color-error)",
+          fontSize: 14,
         },
         components: {
-          Menu: {
-            itemPaddingInline: 12,
-            iconMarginInlineEnd: 0,
-          },
           Segmented: {
             itemColor: "gray",
             itemSelectedColor: "white",
-            itemSelectedBg: "#7686ca",
-            trackBg: "#fff2e9",
+            itemSelectedBg: "var(--color-primary)",
+            trackBg: "var(--color-bg)",
+          },
+          Typography: {
+            size: 16,
           },
         },
       }}
