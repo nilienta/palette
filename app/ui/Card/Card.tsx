@@ -7,20 +7,26 @@ export default function Card({
   description,
   imgsSrc,
   id,
+  onClick,
 }: {
   price: number;
   name: string;
   description: string;
   imgsSrc: string[];
   id: string;
+  onClick: () => void;
 }) {
   const navigate = useNavigate();
-  const onClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     navigate(`/order/${id}`);
   };
   return (
     <>
-      <div className="flex overflow-hidden bg-white rounded-lg shadow-lg w-full mt-2">
+      <div
+        className="flex overflow-hidden bg-white rounded-lg shadow-lg w-full mt-2"
+        onClick={onClick}
+      >
         <div className="w-1/3 flex">
           <img src={imgsSrc[0]} />
         </div>
@@ -29,7 +35,7 @@ export default function Card({
           <p className="mt-2 text-sm text-gray-600">{description}</p>
           <div className="flex justify-between mt-3 item-center">
             <h1 className="text-xl font-bold text-gray-700">{`${price}₽`}</h1>
-            <Button type="primary" onClick={onClick}>
+            <Button type="primary" onClick={(e) => handleClick(e)}>
               Оформить заказ
             </Button>
           </div>

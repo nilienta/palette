@@ -4,6 +4,7 @@ import Card from "~/ui/Card/Card";
 import { useEffect, useState } from "react";
 import type { Game } from "~/entities/Game/model/game";
 import { getDataFromSheet } from "~/entities/Game/api/getDataFromSheet";
+import { useNavigate } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -13,6 +14,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const navigate = useNavigate();
+
   const [data, setData] = useState<Game[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -66,7 +69,11 @@ export default function Home() {
           </div>
         )}
         {data.map((game) => (
-          <Card key={game.id} {...game} />
+          <Card
+            key={game.id}
+            onClick={() => navigate(`/game/${game.id}`)}
+            {...game}
+          />
         ))}
       </div>
     </div>
