@@ -1,32 +1,30 @@
 import { Outlet, useLocation, useNavigate, useNavigation } from "react-router";
-import { Segmented, Typography, type MenuProps } from "antd";
-
-import { MailOutlined } from "@ant-design/icons";
+import { Segmented, Typography } from "antd";
 import { useEffect, useState } from "react";
-const items: MenuProps["items"] = [
+
+const items = [
   {
     key: "",
     label: "Игры",
-    icon: <MailOutlined />,
+    icon: "🎲",
   },
   {
     key: "tracker",
     label: "Трекер",
-    icon: <MailOutlined />,
+    icon: "🗓️",
   },
   {
     key: "other",
     label: "Прочее",
-    icon: <MailOutlined />,
+    icon: "📚",
   },
   {
     key: "about",
     label: "Обо мне",
-    icon: <MailOutlined />,
+    icon: "👩🏼",
   },
 ];
 
-// TODO: fix menu when update page
 export default function TabsNavigation() {
   const navigation = useNavigation();
   const navigate = useNavigate();
@@ -57,52 +55,17 @@ export default function TabsNavigation() {
             item: "font-bold uppercase",
           }}
           value={current}
-          options={[
-            {
-              label: (
-                <div style={{ padding: 4 }}>
-                  <span role="img" className="text-2xl">
-                    🎲
-                  </span>
-                  <div>Игры</div>
-                </div>
-              ),
-              value: "",
-            },
-            {
-              label: (
-                <div style={{ padding: 4 }}>
-                  <span role="img" className="text-2xl">
-                    🗓️
-                  </span>
-                  <div>Трекер</div>
-                </div>
-              ),
-              value: "tracker",
-            },
-            {
-              label: (
-                <div style={{ padding: 4 }}>
-                  <span role="img" className="text-2xl">
-                    📚
-                  </span>
-                  <div>Прочее</div>
-                </div>
-              ),
-              value: "other",
-            },
-            {
-              label: (
-                <div style={{ padding: 4 }}>
-                  <span role="img" className="text-2xl">
-                    👩🏼
-                  </span>
-                  <div>Обо мне</div>
-                </div>
-              ),
-              value: "about",
-            },
-          ]}
+          options={items.map((item) => ({
+            label: (
+              <div style={{ padding: 4 }}>
+                <span role="img" className="text-2xl">
+                  {item.icon}
+                </span>
+                <div>{item.label}</div>
+              </div>
+            ),
+            value: item.key,
+          }))}
         />
       </div>
 
