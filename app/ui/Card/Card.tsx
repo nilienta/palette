@@ -8,7 +8,7 @@ export default function Card({
   imgsSrc,
   id,
 }: {
-  price: string;
+  price: number;
   name: string;
   description: string;
   imgsSrc: string[];
@@ -28,7 +28,7 @@ export default function Card({
           <h1 className="text-2xl font-bold text-gray-900">{name}</h1>
           <p className="mt-2 text-sm text-gray-600">{description}</p>
           <div className="flex justify-between mt-3 item-center">
-            <h1 className="text-xl font-bold text-gray-700">{price}</h1>
+            <h1 className="text-xl font-bold text-gray-700">{`${price}₽`}</h1>
             <Button type="primary" onClick={onClick}>
               Оформить заказ
             </Button>

@@ -1,7 +1,9 @@
-import { Flex, Typography } from "antd";
+import { Typography } from "antd";
 import type { Route } from "./+types/home";
-import { getGames } from "~/data";
 import Card from "~/ui/Card/Card";
+import { useEffect, useState } from "react";
+import type { Game } from "~/entities/Game/model/game";
+import { getDataFromSheet } from "~/entities/Game/api/getDataFromSheet";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -10,15 +12,26 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export async function loader() {
-  const { games } = await getGames();
-  if (!games) {
-    throw new Response("Игры не найдены", { status: 404 });
-  }
-  return games;
-}
+export default function Home() {
+  const [data, setData] = useState<Game[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-export default function Home({ loaderData }: Route.ComponentProps) {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const dataInit = await getDataFromSheet();
+        setData(dataInit);
+        setLoading(false);
+      } catch (error) {
+        setError(true);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="flex flex-col gap-2">
       <Typography.Text>
@@ -33,7 +46,26 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       </Typography.Text>
 
       <div className="flex flex-wrap justify-center ">
-        {loaderData.map((game) => (
+        {loading && (
+          <div style={{ padding: "20px", textAlign: "center" }}>
+            <div>Загрузка данных</div>
+            <div style={{ marginTop: "10px", fontSize: "14px", color: "#666" }}>
+              Пожалуйста, подождите
+            </div>
+          </div>
+        )}
+        {error && (
+          <div style={{ padding: "20px", color: "red", textAlign: "center" }}>
+            <div>❌ Ошибка: {error}</div>
+            <button
+              onClick={() => window.location.reload()}
+              style={{ marginTop: "10px", padding: "8px 16px" }}
+            >
+              Попробовать снова
+            </button>
+          </div>
+        )}
+        {data.map((game) => (
           <Card key={game.id} {...game} />
         ))}
       </div>
