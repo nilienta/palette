@@ -2319,6 +2319,11 @@ stylis@^4.3.4:
   resolved "https://registry.npmjs.org/stylis/-/stylis-4.3.6.tgz"
   integrity sha512-yQ3rwFWRfwNUY7H5vpU0wfdkNSnvnJinhF9830Swlaxl03zsOjCfmX0ugac+3LtK0lYSgwL/KXc8oYL3mG4YFQ==
 
+swiper@^12.1.2:
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-12.1.2.tgz#39eaad0c088def66a7eb8f6bae1439384586ab90"
+  integrity sha512-4gILrI3vXZqoZh71I1PALqukCFgk+gpOwe1tOvz5uE9kHtl2gTDzmYflYCwWvR4LOvCrJi6UEEU+gnuW5BtkgQ==
+
 tailwindcss@4.1.18, tailwindcss@^4.1.13:
   version "4.1.18"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.18.tgz"

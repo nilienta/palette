@@ -1,15 +1,20 @@
-import { Typography } from "antd";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Button, Typography } from "antd";
+import { useEffect, useRef, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router";
 import { getDataFromSheet } from "~/entities/Game/api/getDataFromSheet";
 import type { Game } from "~/entities/Game/model/game";
 import { useTelegramBackButton } from "~/shared/hooks/useTelegramBackButton";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
 // TODO добавить хэширование запросов api
 export default function Game() {
   useTelegramBackButton();
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [data, setData] = useState<Game[]>([]);
   const [loading, setLoading] = useState(true);
@@ -28,6 +33,8 @@ export default function Game() {
     fetchData();
   }, []);
 
+  const paginationRef = useRef(null);
+
   const game = data.find((g) => g.id === id);
   if (loading) {
     return <Typography.Title level={3}>Loading...</Typography.Title>;
@@ -35,10 +42,44 @@ export default function Game() {
   if (!game) {
     return <Typography.Title level={3}>Игра не найдена</Typography.Title>;
   }
+
   return (
-    <div className="flex flex-col gap-2">
-      {game.imgsSrc &&
-        game.imgsSrc.map((_, index) => <img src={game.imgsSrc[index]} />)}
+    <div className="flex flex-col gap-2 w-full ">
+      <Swiper
+        modules={[Pagination]}
+        spaceBetween={2}
+        slidesPerView={1}
+        grabCursor={true}
+        pagination={{
+          clickable: true,
+          el: paginationRef.current,
+        }}
+        className="w-full h-full"
+      >
+        {game.imgsSrc.map((_, index) => (
+          <SwiperSlide>
+            <div className="w-full h-full flex items-center justify-center">
+              <img
+                src={game.imgsSrc[index]}
+                className="w-[70%] h-auto max-h-full object-contain"
+                alt=""
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div
+        ref={paginationRef}
+        className="w-full flex justify-center items-center"
+      />
+      <div className="w-full flex justify-center items-center">
+        <Link to="https://www.youtube.com/watch?v=6PjgwDxwAMc">
+          <Button>Посмотреть видео</Button>
+          <Button type="primary" onClick={() => navigate(`/order/${id}`)}>
+            Оформить заказ
+          </Button>
+        </Link>
+      </div>
       <Typography.Title level={2}>{game.name}</Typography.Title>
       <Typography.Text>{game.description}</Typography.Text>
       <Typography.Text>{`Цена: ${game.price}₽`}</Typography.Text>

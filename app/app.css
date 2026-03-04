@@ -25,3 +25,14 @@ body {
     color-scheme: dark;
   }
 }
+
+:root {
+  --swiper-pagination-color: var(
+    --color-primary
+  ); /* Розовый цвет для активной точки */
+  --swiper-pagination-bullet-inactive-color: rgba(
+    var(--color-primary-rgb),
+    0.4
+  ); /* Цвет неактивных точек */
+  --swiper-pagination-bullet-size: 10px; /* Размер точек */
+}
