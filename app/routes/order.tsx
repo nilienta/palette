@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { getGames } from "~/data";
 import type { Route } from "./+types/home";
 import { Input } from "antd";
+import { useTelegramBackButton } from "~/shared/hooks/useTelegramBackButton";
 const { TextArea } = Input;
 
 export async function loader() {
@@ -14,6 +15,8 @@ export async function loader() {
 }
 
 export default function Order({ loaderData }: Route.ComponentProps) {
+  useTelegramBackButton();
+
   const { id } = useParams();
   const game = loaderData.find((g) => g.id === id);
   if (!game) {
