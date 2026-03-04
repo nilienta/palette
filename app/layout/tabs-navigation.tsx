@@ -48,7 +48,7 @@ export default function TabsNavigation() {
       <Typography.Title level={1} className="text-center">
         Лидия Лайф Колор
       </Typography.Title>
-      <div className="flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg">
+      <div className="flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-8">
         <Segmented
           onChange={onClick}
           classNames={{
