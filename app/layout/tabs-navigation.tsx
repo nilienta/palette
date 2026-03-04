@@ -1,6 +1,7 @@
 import { Outlet, useLocation, useNavigate, useNavigation } from "react-router";
 import { Segmented, Typography } from "antd";
 import { useEffect, useState } from "react";
+import { useKeyboardActive } from "./useKeyboardActive";
 
 const items = [
   {
@@ -32,6 +33,8 @@ export default function TabsNavigation() {
   const location = useLocation();
   const [current, setCurrent] = useState(location.pathname.substring(1) || "");
 
+  const isKeyboardActive = useKeyboardActive();
+
   useEffect(() => {
     const path = location.pathname.substring(1);
     if (path !== current) {
@@ -48,7 +51,9 @@ export default function TabsNavigation() {
       <Typography.Title level={1} className="text-center">
         Лидия Лайф Колор
       </Typography.Title>
-      <div className="flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-8">
+      <div
+        className={`flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-6 ${isKeyboardActive && "hidden"}`}
+      >
         <Segmented
           onChange={onClick}
           classNames={{
