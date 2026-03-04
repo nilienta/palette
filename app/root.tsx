@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { ConfigProvider, Flex } from "antd";
+import { useEffect } from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -24,14 +25,68 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+// Layout компонент оборачивает HydrateFallback, App, ErrorBoundary
 export function Layout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    const isBrowser =
+      typeof window !== "undefined" && typeof document !== "undefined";
+
+    //   Серверный рендеринг - пропускаем
+    if (!isBrowser) {
+      return;
+    }
+
+    const loadTelegramSDK = () => {
+      try {
+        // Проверяем, не загружен ли уже скрипт
+        if (document.querySelector('script[src*="telegram-web-app"]')) {
+          // Проверяем, инициализирован ли WebApp
+          if (window.Telegram?.WebApp) {
+            window.Telegram.WebApp.ready();
+            window.Telegram.WebApp.expand();
+          }
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = "https://telegram.org/js/telegram-web-app.js?60";
+        script.async = true;
+
+        const scriptPromise = new Promise((resolve, reject) => {
+          script.onload = resolve;
+          script.onerror = reject;
+        });
+
+        document.head.appendChild(script);
+
+        scriptPromise
+          .then(() => {
+            if (window.Telegram?.WebApp) {
+              window.Telegram.WebApp.ready();
+              window.Telegram.WebApp.expand();
+            }
+          })
+          .catch(() => {});
+      } catch (e) {}
+    };
+
+    // Загружаем после полной загрузки страницы
+    if (document.readyState === "complete") {
+      loadTelegramSDK();
+    } else {
+      window.addEventListener("load", loadTelegramSDK);
+      return () => window.removeEventListener("load", loadTelegramSDK);
+    }
+  }, []);
+
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <title>Лидия | Раскраски</title>
       </head>
       <body>
         {children}
@@ -49,12 +104,14 @@ export default function App() {
         token: {
           colorPrimary: "var(--color-primary)",
           colorInfo: "var(--color-info)",
-          colorBgBase: "var(--color-bg)",
           colorSuccess: "var(--color-success)",
           colorError: "var(--color-error)",
           fontSize: 14,
+          colorBgBase: "var(--color-bg)",
+          colorBgContainer: "var(--color-bg)",
         },
         components: {
+          Form: { itemMarginBottom: 0 },
           Segmented: {
             itemColor: "gray",
             itemSelectedColor: "white",

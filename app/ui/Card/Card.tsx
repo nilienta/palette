@@ -1,16 +1,23 @@
 import { Button } from "antd";
+import { useNavigate } from "react-router";
 
 export default function Card({
   price,
   name,
   description,
   imgsSrc,
+  id,
 }: {
   price: string;
   name: string;
   description: string;
   imgsSrc: string[];
+  id: string;
 }) {
+  const navigate = useNavigate();
+  const onClick = () => {
+    navigate(`/order/${id}`);
+  };
   return (
     <>
       <div className="flex overflow-hidden bg-white rounded-lg shadow-lg w-full mt-2">
@@ -22,7 +29,9 @@ export default function Card({
           <p className="mt-2 text-sm text-gray-600">{description}</p>
           <div className="flex justify-between mt-3 item-center">
             <h1 className="text-xl font-bold text-gray-700">{price}</h1>
-            <Button type="primary">Написать</Button>
+            <Button type="primary" onClick={onClick}>
+              Оформить заказ
+            </Button>
           </div>
         </div>
       </div>

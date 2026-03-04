@@ -13,5 +13,6 @@ export default [
     route("/advent", "routes/advent.tsx"),
     route("/about", "routes/about.tsx"),
     route("/other", "routes/other.tsx"),
+    route("/order/:id", "routes/order.tsx"),
   ]),
 ] satisfies RouteConfig;

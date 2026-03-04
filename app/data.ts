@@ -2,7 +2,7 @@ export async function getGames() {
   return {
     games: [
       {
-        id: 1,
+        id: "1",
         name: "Загадочный расклад",
         description:
           "🎲 Загадочный расклад — игра для тех, кто любит загадки и творчество",
@@ -12,7 +12,7 @@ export async function getGames() {
         price: "2 500 ₽",
       },
       {
-        id: 2,
+        id: "2",
         name: "Колорквест",
         description: "Рандомно вытащи карточку с заданием.",
         imgsSrc: [
@@ -21,7 +21,7 @@ export async function getGames() {
         price: "4 000 ₽",
       },
       {
-        id: 3,
+        id: "3",
         name: "240 дней с langoстиной guangoвной",
         imgsSrc: [
           "https://photo-cdn2.icons8.com/8FdTzZwzAwjkuzLxGsqmIjkDSdQG6JwGMrlEOsIpmSM/rs:fit:576:576/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvMTY1L2RlYjYx/MGMzLTUyZmYtNDdm/NC04NzAxLWQ5ODM3/YjUyNzMxOC5qcGc.webp",
