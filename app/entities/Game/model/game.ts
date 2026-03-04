@@ -4,4 +4,5 @@ export type Game = {
   description: string;
   imgsSrc: string[];
   price: number;
+  videoUrl?: string;
 };

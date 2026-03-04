@@ -13,7 +13,7 @@ export async function getDataFromSheet() {
   }
 }
 
-function parseCSV(csvText: string) {
+function parseCSV(csvText: string): Game[] {
   // Разбиваем на строки с учётом кавычек
   const lines = [];
   let currentLine = "";
@@ -38,13 +38,13 @@ function parseCSV(csvText: string) {
   const headers = parseCSVLine(lines[0]);
 
   // Парсим остальные строки в объекты
-  const result: [] | Game[] = [];
+  const result: Game[] = [];
 
   for (let i = 1; i < lines.length; i++) {
     if (!lines[i].trim()) continue; // пропускаем пустые строки
 
     const values = parseCSVLine(lines[i]);
-    const rowObject: Game = {
+    const rowObject: Record<string, any> = {
       id: "",
       name: "",
       description: "",
@@ -60,40 +60,31 @@ function parseCSV(csvText: string) {
         value = value.slice(1, -1);
       }
 
-      // Обработка по имени поля
-      switch (header.trim()) {
+      const trimmedHeader = header.trim();
+
+      switch (trimmedHeader) {
         case "id":
-          rowObject.id = value.toString();
-          break;
-
         case "name":
-          rowObject.name = value.trim();
-          break;
-
         case "description":
-          rowObject.description = value.trim();
+        case "videoUrl":
+          rowObject[trimmedHeader] = value.toString();
           break;
-
         case "imgsSrc":
-          // Разбиваем ссылки по переносу строки
           rowObject.imgsSrc = value
-            .split("\n")
+            .split(" ")
             .map((s) => s.trim())
             .filter((s) => s.length > 0);
           break;
-
         case "price":
-          // Преобразуем цену в число (убираем пробелы и символ ₽)
           const priceStr = value.replace(/[^\d]/g, "");
           rowObject.price = parseInt(priceStr, 10) || 0;
           break;
-
         default:
-          break;
+          console.warn(`Неизвестное поле: ${trimmedHeader}`);
       }
     });
 
-    result.push(rowObject);
+    result.push(rowObject as Game);
   }
 
   return result;

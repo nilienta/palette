@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import { ButtonYouTube } from "~/ui/ButtonYouTube/ButtonYouTube";
 
 // TODO добавить хэширование запросов api
 export default function Game() {
@@ -72,17 +73,18 @@ export default function Game() {
         ref={paginationRef}
         className="w-full flex justify-center items-center"
       />
-      <div className="w-full flex justify-center items-center">
-        <Link to="https://www.youtube.com/watch?v=6PjgwDxwAMc">
-          <Button>Посмотреть видео</Button>
-          <Button type="primary" onClick={() => navigate(`/order/${id}`)}>
-            Оформить заказ
-          </Button>
-        </Link>
+      <div className="w-full flex  items-start gap-2">
+        <Typography.Title level={2}>{game.name}</Typography.Title>
+        {game.videoUrl && <ButtonYouTube url={game.videoUrl} />}
       </div>
-      <Typography.Title level={2}>{game.name}</Typography.Title>
+
       <Typography.Text>{game.description}</Typography.Text>
-      <Typography.Text>{`Цена: ${game.price}₽`}</Typography.Text>
+      <div className="w-full flex justify-between items-center gap-2">
+        <Typography.Text>{`Цена: ${game.price}₽`}</Typography.Text>
+        <Button type="primary" onClick={() => navigate(`/order/${id}`)}>
+          Оформить заказ
+        </Button>
+      </div>
     </div>
   );
 }
