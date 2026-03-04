@@ -11,6 +11,10 @@
   --color-error: #ef5252;
 }
 
+* {
+  touch-action: manipulation; /* Оптимизация для touch-интерфейсов, запрет на zoom*/
+}
+
 html,
 body {
   background-color: #fff2e9;
