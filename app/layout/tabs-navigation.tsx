@@ -1,8 +1,8 @@
-import { Outlet, useNavigate, useNavigation } from "react-router";
+import { Outlet, useLocation, useNavigate, useNavigation } from "react-router";
 import { Segmented, Typography, type MenuProps } from "antd";
 
 import { MailOutlined } from "@ant-design/icons";
-
+import { useEffect, useState } from "react";
 const items: MenuProps["items"] = [
   {
     key: "",
@@ -26,10 +26,24 @@ const items: MenuProps["items"] = [
   },
 ];
 
-// TODO: apply items
+// TODO: fix menu when update page
 export default function TabsNavigation() {
   const navigation = useNavigation();
   const navigate = useNavigate();
+
+  const location = useLocation();
+  const [current, setCurrent] = useState(location.pathname.substring(1) || "");
+
+  useEffect(() => {
+    const path = location.pathname.substring(1);
+    if (path !== current) {
+      setCurrent(path);
+    }
+  }, [location.pathname]);
+
+  const onClick = (key: string) => {
+    navigate(key);
+  };
 
   return (
     <div className="max-w-3xl w-full h-min-screen mx-auto mt-4 mb-[98px]">
@@ -38,10 +52,11 @@ export default function TabsNavigation() {
       </Typography.Title>
       <div className="flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg">
         <Segmented
-          onChange={(key) => navigate(key)}
+          onChange={onClick}
           classNames={{
             item: "font-bold uppercase",
           }}
+          value={current}
           options={[
             {
               label: (
