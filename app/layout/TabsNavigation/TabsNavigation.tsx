@@ -49,7 +49,7 @@ export default function TabsNavigation() {
   return (
     <div className="max-w-3xl w-full h-min-screen mx-auto mt-4 mb-[108px]">
       <div
-        className={`flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-4 ${isKeyboardActive && "hidden"}`}
+        className={`w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-6 ${isKeyboardActive && "hidden"}`}
       >
         <Segmented
           onChange={onClick}
@@ -57,11 +57,12 @@ export default function TabsNavigation() {
             item: "font-bold uppercase",
           }}
           size="small"
+          block
           value={current}
           options={items.map((item) => ({
             label: (
-              <div style={{ padding: 4 }}>
-                <span role="img" className="text-2xl">
+              <div>
+                <span role="img" className="text-xl">
                   {item.icon}
                 </span>
                 <div>{item.label}</div>

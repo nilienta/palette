@@ -140,10 +140,12 @@ export default function App() {
         components: {
           Form: { itemMarginBottom: 0 },
           Segmented: {
-            itemColor: "gray",
+            itemColor: "#666",
+            itemHoverColor: "#444",
             itemSelectedColor: "white",
+            itemHoverBg: colors.primarySoft,
             itemSelectedBg: colors.primary,
-            trackBg: colors.bg,
+            trackBg: "transparent",
             trackPadding: 0,
           },
           Typography: {
