@@ -50,8 +50,9 @@ export default function Tracker() {
       <div className="flex flex-col gap-4 w-full mb-4 rounded-2xl p-4 bg-(--color-bg-soft)">
         <Swiper
           modules={[Pagination]}
-          spaceBetween={2}
-          slidesPerView={1}
+          spaceBetween={10}
+          slidesPerView={1.5}
+          centeredSlides={true}
           grabCursor={true}
           pagination={{
             clickable: true,
