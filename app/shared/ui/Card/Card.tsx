@@ -7,19 +7,21 @@ export default function Card({
   description,
   imgsSrc,
   id,
+  type,
   onClick,
 }: {
   price: number;
   name: string;
   description: string;
   imgsSrc: string[];
+  type: string;
   id: string;
   onClick: () => void;
 }) {
   const navigate = useNavigate();
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    navigate(`/order/${id}`);
+    navigate(`/order/${type}/${id}`);
   };
   return (
     <>
