@@ -1,10 +1,8 @@
 import { Typography } from "antd";
 import type { Route } from "./+types/home";
-import Card from "~/ui/Card/Card";
-import { useEffect, useState } from "react";
-import type { Game } from "~/entities/Game/model/game";
-import { getDataFromSheet } from "~/entities/Game/api/getDataFromSheet";
 import { useNavigate } from "react-router";
+import { useGames } from "~/entities/Game/hooks/useGames";
+import Card from "~/shared/ui/Card/Card";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -15,25 +13,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   const navigate = useNavigate();
-
-  const [data, setData] = useState<Game[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const dataInit = await getDataFromSheet();
-        setData(dataInit);
-        setLoading(false);
-      } catch (error) {
-        setError(true);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data, loading, error } = useGames();
 
   return (
     <div className="flex flex-col gap-2">
@@ -74,6 +54,7 @@ export default function Home() {
         {data.map((game) => (
           <Card
             key={game.id}
+            type="game"
             onClick={() => navigate(`/game/${game.id}`)}
             {...game}
           />

@@ -5,7 +5,7 @@ import {
   type SheetData,
 } from "../api/parseSheetData";
 
-export const useTrackerData = () => {
+export const useTracker = () => {
   const [data, setData] = useState<SheetData>({
     links: [],
     price: 0,

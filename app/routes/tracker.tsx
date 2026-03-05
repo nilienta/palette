@@ -1,6 +1,6 @@
 import { Typography, Card, Space, Tag, Collapse } from "antd";
 const { Panel } = Collapse;
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,15 +17,17 @@ import {
   DownOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
-import { ButtonYouTube } from "~/ui/ButtonYouTube/ButtonYouTube";
+import { ButtonYouTube } from "~/shared/ui/ButtonYouTube/ButtonYouTube";
 import { useTelegramBackButton } from "~/shared/hooks/useTelegramBackButton";
 import { colors } from "~/root";
-import { useTrackerData } from "~/entities/Tracker/hooks/useTrackerLinks";
+import { useTracker } from "~/entities/Tracker/hooks/useTracker";
+import { useNavigate } from "react-router";
 
 export default function Tracker() {
   useTelegramBackButton();
+  const navigate = useNavigate();
 
-  const { links, price, videoUrl, loading, error } = useTrackerData();
+  const { links, price, videoUrl, loading, error } = useTracker();
 
   const [activePanels, setActivePanels] = useState<string[]>([
     "1",
@@ -336,7 +338,7 @@ export default function Tracker() {
                 border: `1px solid ${colors.success}`,
                 boxShadow: `0 4px 10px ${colors.success}60`,
               }}
-              onClick={() => console.log("Оформить заказ")}
+              onClick={() => navigate("/order/tracker")}
             >
               <ShoppingCartOutlined style={{ color: "white", fontSize: 20 }} />
             </button>

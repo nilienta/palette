@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import { ButtonYouTube } from "~/ui/ButtonYouTube/ButtonYouTube";
+import { ButtonYouTube } from "~/shared/ui/ButtonYouTube/ButtonYouTube";
 
 // TODO добавить хэширование запросов api
 export default function Game() {
