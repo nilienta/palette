@@ -7,14 +7,11 @@ export const useTelegramBackButton = () => {
       return;
     }
 
-    // Проверяем наличие Telegram WebApp
     if (window.Telegram?.WebApp) {
       const webApp = window.Telegram.WebApp;
       webApp.BackButton.show();
 
-      // Добавляем обработчик нажатия
       const handleBackClick = () => {
-        console.log("Нажата кнопка назад");
         window.history.back();
       };
 

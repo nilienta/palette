@@ -4,11 +4,16 @@
   --font-sans:
     "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --color-primary: #7686ca;
+  --color-primary: #7686ca; /* Основной фиолетово-синий */
+  --color-primary-soft: #e8ecff; /* Мягкий вариант primary для фонов */
+  --color-primary-light: #9aabff; /* Светлый вариант primary */
   --color-info: #7686ca;
-  --color-bg: #fff2e9;
-  --color-success: #42bd94;
-  --color-error: #ef5252;
+  --color-bg: #fff2e9; /* Фоновый персиковый */
+  --color-bg-soft: #fff9f5; /* Мягкий вариант фона */
+  --color-success: #42bd94; /* Зеленый для успеха */
+  --color-success-light: #d4f0e6; /* Светлый вариант success */
+  --color-error: #ef5252; /* Красный для ошибок */
+  --color-error-light: #fee2e2; /*Светлый вариант error*/
 }
 
 * {

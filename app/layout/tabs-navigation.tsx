@@ -48,9 +48,6 @@ export default function TabsNavigation() {
 
   return (
     <div className="max-w-3xl w-full h-min-screen mx-auto mt-4 mb-[98px]">
-      <Typography.Title level={1} className="text-center">
-        Лидия Лайф Колор
-      </Typography.Title>
       <div
         className={`flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-6 ${isKeyboardActive && "hidden"}`}
       >

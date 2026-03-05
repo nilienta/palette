@@ -37,6 +37,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-2">
+      <Typography.Title level={1} className="text-center">
+        Лидия Лайф Колор
+      </Typography.Title>
       <Typography.Text>
         👋 Всем привет! Это сообщество посвящено настольным играм ручной работы,
         созданны для того, чтобы делать процесс раскрашивания ещё интереснее и

@@ -100,29 +100,58 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+const getCSSVariable = (name: string, fallback: string): string => {
+  if (typeof window === "undefined") return fallback;
+
+  try {
+    const computedStyle = getComputedStyle(document.documentElement);
+    return computedStyle.getPropertyValue(name).trim() || fallback;
+  } catch {
+    return fallback;
+  }
+};
+
+export const colors = {
+  primary: getCSSVariable("--color-primary", "#7686ca"),
+  primarySoft: getCSSVariable("--color-primary-soft", "#e8ecff"),
+  primaryLight: getCSSVariable("--color-primary-light", "#9aabff"),
+  info: getCSSVariable("--color-info", "#7686ca"),
+  success: getCSSVariable("--color-success", "#42bd94"),
+  successLight: getCSSVariable("--color-success-light", "#d4f0e6"),
+  error: getCSSVariable("--color-error", "#ef5252"),
+  errorLight: getCSSVariable("--color-error-light", "#fee2e2"),
+  bg: getCSSVariable("--color-bg", "#fff2e9"),
+  bgSoft: getCSSVariable("--color-bg-soft", "#fff9f5"),
+};
+
 export default function App() {
   return (
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "var(--color-primary)",
-          colorInfo: "var(--color-info)",
-          colorSuccess: "var(--color-success)",
-          colorError: "var(--color-error)",
+          colorPrimary: colors.primary,
+          colorInfo: colors.info,
+          colorSuccess: colors.success,
+          colorError: colors.error,
+          colorBgBase: colors.bg,
+          colorBgContainer: colors.bg,
           fontSize: 14,
-          colorBgBase: "var(--color-bg)",
-          colorBgContainer: "var(--color-bg)",
         },
         components: {
           Form: { itemMarginBottom: 0 },
           Segmented: {
             itemColor: "gray",
             itemSelectedColor: "white",
-            itemSelectedBg: "var(--color-primary)",
-            trackBg: "var(--color-bg)",
+            itemSelectedBg: colors.primary,
+            trackBg: colors.bg,
           },
           Typography: {
             size: 16,
+            fontSizeHeading1: 32,
+            fontSizeHeading2: 24,
+            fontSizeHeading3: 20,
+            fontSizeHeading4: 18,
+            titleMarginBottom: 16,
           },
         },
       }}
