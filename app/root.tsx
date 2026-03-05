@@ -144,6 +144,7 @@ export default function App() {
             itemSelectedColor: "white",
             itemSelectedBg: colors.primary,
             trackBg: colors.bg,
+            trackPadding: 0,
           },
           Typography: {
             size: 16,

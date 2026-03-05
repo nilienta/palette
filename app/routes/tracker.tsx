@@ -304,7 +304,7 @@ export default function Tracker() {
       <div
         style={{
           position: "sticky",
-          bottom: 98,
+          bottom: 86,
           zIndex: 49,
           display: window.innerWidth < 768 ? "block" : "none",
         }}

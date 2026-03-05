@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 
-export const Tab = ({ to, label }: { to: string; label: string }) => {
+export default function Tab({ to, label }: { to: string; label: string }) {
   return (
     <li className="inline-block mr-2 p-4 ">
       <NavLink
@@ -17,4 +17,4 @@ export const Tab = ({ to, label }: { to: string; label: string }) => {
       </NavLink>
     </li>
   );
-};
+}

@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useNavigate, useNavigation } from "react-router";
-import { Segmented, Typography } from "antd";
+import { Segmented } from "antd";
 import { useEffect, useState } from "react";
-import { useKeyboardActive } from "./useKeyboardActive";
+import { useKeyboardActive } from "../useKeyboardActive";
 
 const items = [
   {
@@ -47,15 +47,16 @@ export default function TabsNavigation() {
   };
 
   return (
-    <div className="max-w-3xl w-full h-min-screen mx-auto mt-4 mb-[98px]">
+    <div className="max-w-3xl w-full h-min-screen mx-auto mt-4 mb-[108px]">
       <div
-        className={`flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-6 ${isKeyboardActive && "hidden"}`}
+        className={`flex justify-center w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-4 ${isKeyboardActive && "hidden"}`}
       >
         <Segmented
           onChange={onClick}
           classNames={{
             item: "font-bold uppercase",
           }}
+          size="small"
           value={current}
           options={items.map((item) => ({
             label: (
