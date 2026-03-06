@@ -46,8 +46,16 @@ export default function TabsNavigation() {
     navigate(key);
   };
 
+  console.log("🎹 isKeyboardActive =", isKeyboardActive);
+  console.log("🎹 style display =", isKeyboardActive ? "none" : "block");
+
   return (
     <div className="max-w-3xl w-full h-min-screen mx-auto mt-4 mb-[108px]">
+      {isKeyboardActive ? (
+        <div style={{ display: "none" }}>Скрыто</div>
+      ) : (
+        <div style={{ display: "block" }}>Видимо</div>
+      )}
       <div
         className="w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-6"
         style={{ display: isKeyboardActive ? "none" : "block" }}
