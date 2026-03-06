@@ -1,4 +1,3 @@
-import React from "react";
 import { Form } from "antd";
 import { colors } from "~/root";
 import { PictureOutlined } from "@ant-design/icons";

@@ -1,6 +1,6 @@
 import { Button, Typography } from "antd";
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { getDataFromSheet } from "~/entities/Game/api/getDataFromSheet";
 import type { Game } from "~/entities/Game/model/game";
 import { useTelegramBackButton } from "~/shared/hooks/useTelegramBackButton";
