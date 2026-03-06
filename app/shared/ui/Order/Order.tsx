@@ -37,12 +37,12 @@ export const Order = ({ data, children }: Props) => {
     if (webApp) {
       const { delivery, address, comment, cover, cut } = values;
       const text = `Здравствуйте, Лидия. Хочу выполнить заказ ${name}.
-        ${cover && `Обложка: ${cover}`}
-		${cut && "Разрезать наклейки"}
+         Обложка: ${cover || "Стандартная"}
+		${cut ? "Разрезать наклейки" : "Не разрезать наклейки"}
         Цена: ${price}
         Доставка: ${delivery}
   	  	Адрес: ${address}
-  	  	Комментарии: ${comment}`;
+  	  	Комментарии: ${comment || "Нет"}`;
       const cleanText = text
         .split("\n")
         .map((line) => line.trim())
