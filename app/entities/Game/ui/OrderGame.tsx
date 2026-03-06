@@ -8,9 +8,10 @@ export default function OrderGame() {
   const { data, loading, error } = useGames();
 
   const game = data.find((g) => g.id === id);
-  if (!game) return <div>Игра не найдена</div>;
-  if (loading) return <div>Загрузка...</div>;
-  if (error) return <div>Ошибка загрузки</div>;
+  if (loading) return <p>Загрузка...</p>;
+  if (game === undefined)
+    return <p>Если загрузка больше 5 секунд, то игра не нашлась</p>;
+  if (error) return <p>Ошибка загрузки</p>;
 
   const gameData = {
     name: game.name,

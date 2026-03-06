@@ -37,12 +37,9 @@ export default function Game() {
   const paginationRef = useRef(null);
 
   const game = data.find((g) => g.id === id);
-  if (loading) {
-    return <Typography.Title level={3}>Loading...</Typography.Title>;
-  }
-  if (!game) {
-    return <Typography.Title level={3}>Игра не найдена</Typography.Title>;
-  }
+  if (loading) return <p>Загрузка...</p>;
+  if (game === undefined)
+    return <p>Если загрузка больше 5 секунд, то игра не нашлась</p>;
 
   return (
     <div className="flex flex-col gap-2 w-full ">

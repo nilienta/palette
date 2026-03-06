@@ -2,7 +2,7 @@ import { Form, Radio } from "antd";
 import { Order } from "~/shared/ui/Order/Order";
 import { useTracker } from "../hooks/useTracker";
 
-export default function OrderTracker() {
+export const OrderTracker = () => {
   const { links, price, loading, error } = useTracker();
 
   if (loading) return <div>Загрузка...</div>;

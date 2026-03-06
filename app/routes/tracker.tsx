@@ -331,7 +331,7 @@ export default function Tracker() {
             </div>
 
             <button
-              className="rounded-full flex items-center justify-center flex-shrink-0 transition-all hover:scale-105 active:scale-95"
+              className="rounded-full flex items-center justify-center flex-shrink-0 transition-all hover:scale-105 active:scale-95 cursor-pointer"
               style={{
                 width: 48,
                 height: 48,

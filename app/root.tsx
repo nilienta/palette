@@ -146,7 +146,6 @@ export default function App() {
             itemHoverBg: colors.primarySoft,
             itemSelectedBg: colors.primary,
             trackBg: "transparent",
-            trackPadding: 0,
           },
           Typography: {
             size: 16,
