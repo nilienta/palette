@@ -1,14 +1,15 @@
 import { useEffect } from "react";
+import { useTelegram } from "../providers/TelegramProvider";
 
 export const useTelegramBackButton = () => {
+  const { isReady, webApp } = useTelegram();
   useEffect(() => {
     // Защита от SSR
     if (typeof window === "undefined") {
       return;
     }
 
-    if (window.Telegram?.WebApp) {
-      const webApp = window.Telegram.WebApp;
+    if (webApp && isReady) {
       webApp.BackButton.show();
 
       const handleBackClick = () => {

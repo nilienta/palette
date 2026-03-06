@@ -30,7 +30,6 @@ export function TelegramProvider({ children }: { children: React.ReactNode }) {
         if (document.querySelector('script[src*="telegram-web-app"]')) {
           // Проверяем, инициализирован ли WebApp
           if (window.Telegram?.WebApp) {
-            console.log("✅ Telegram WebApp готов");
             window.Telegram.WebApp.ready();
             window.Telegram.WebApp.expand();
             setWebApp(window.Telegram.WebApp);
@@ -45,7 +44,6 @@ export function TelegramProvider({ children }: { children: React.ReactNode }) {
 
         script.onload = () => {
           if (window.Telegram?.WebApp) {
-            console.log("✅ Telegram WebApp загружен");
             window.Telegram.WebApp.ready();
             window.Telegram.WebApp.expand();
             setWebApp(window.Telegram.WebApp);
