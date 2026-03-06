@@ -10,8 +10,6 @@ export const useKeyboardActive = () => {
 
     // Мок для тестирования на компьютере
     if (!window.Telegram?.WebApp) {
-      console.log("⚠️ Telegram WebApp не найден. Используется тестовый режим.");
-
       // Создаем тестовые кнопки в консоли
       (window as any).__testKeyboard = {
         open: () => setIsKeyboardActive(true),
