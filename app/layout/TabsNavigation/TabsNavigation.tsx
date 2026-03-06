@@ -49,7 +49,7 @@ export default function TabsNavigation() {
   return (
     <div className="max-w-3xl w-full h-min-screen mx-auto mt-4 mb-[108px]">
       <div
-        className={`w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-6 ${isKeyboardActive && "hidden"}`}
+        className={`w-full max-w-3xl fixed bottom-0 z-50 bg-bg pb-6 ${isKeyboardActive ? "hidden" : "block"}`}
       >
         <Segmented
           onChange={onClick}
