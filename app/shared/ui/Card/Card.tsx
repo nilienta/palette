@@ -21,7 +21,7 @@ export default function Card({
   const navigate = useNavigate();
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    navigate(`/order/${type}/${id}`);
+    navigate(`/order/${id}`);
   };
   return (
     <>
