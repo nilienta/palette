@@ -1,0 +1,596 @@
+[
+  {
+    "id": 100001,
+    "title": "Том 1 (Обезьяна)",
+    "slug": "tom-1-obezyana",
+    "number": 1,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100001.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100002,
+    "title": "Том 2 (Питер Пэн)",
+    "slug": "tom-2-piter-pen",
+    "number": 2,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100002.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100003,
+    "title": "Том 3 (Алиса)",
+    "slug": "tom-3-alisa",
+    "number": 3,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100003.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100004,
+    "title": "Том 4 (Симба)",
+    "slug": "tom-4-simba",
+    "number": 4,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100004.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100005,
+    "title": "Том 5 (Лис)",
+    "slug": "tom-5-lis",
+    "number": 5,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100005.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100006,
+    "title": "Том 6 (Понго)",
+    "slug": "tom-6-pongo",
+    "number": 6,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100006.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100007,
+    "title": "Том 7 (Дамбо)",
+    "slug": "tom-7-dambo",
+    "number": 7,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100007.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100008,
+    "title": "Том 8 (Пинокио)",
+    "slug": "tom-8-pinokio",
+    "number": 8,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100008.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100009,
+    "title": "Том 9 (Белоснежка)",
+    "slug": "tom-9-belosnezhka",
+    "number": 9,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100009.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100010,
+    "title": "Том 10 (Геркулес)",
+    "slug": "tom-10-gerkules",
+    "number": 10,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100010.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100011,
+    "title": "Том 11 (Бэмби)",
+    "slug": "tom-11-bembi",
+    "number": 11,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100011.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100012,
+    "title": "Том 12 (Энканто)",
+    "slug": "tom-12-enkanto",
+    "number": 12,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100012.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100013,
+    "title": "Портреты (Алладин)",
+    "slug": "portrety-alladin",
+    "number": 13,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100013.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100014,
+    "title": "Обманка 1 (Алиса)",
+    "slug": "obmanka-1-alisa",
+    "number": 14,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100014.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100015,
+    "title": "Обманка 2 (Капитан Крюк)",
+    "slug": "obmanka-2-kapitan-kryuk",
+    "number": 15,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100015.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100016,
+    "title": "Обманка 3 (Чип и мама)",
+    "slug": "obmanka-3-chip-i-mama",
+    "number": 16,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100016.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100017,
+    "title": "Обманка Детки (Леди)",
+    "slug": "obmanka-detki-ledi",
+    "number": 17,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100017.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100018,
+    "title": "Обманка Герои против злодеев",
+    "slug": "obmanka-geroi-protiv-zlodeev",
+    "number": 18,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100018.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100019,
+    "title": "Животные (Енот)",
+    "slug": "zhivotnye-enot",
+    "number": 19,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100019.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100020,
+    "title": "Детки. Лучшее (Моана)",
+    "slug": "detki-luchshee-moana",
+    "number": 20,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100020.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100021,
+    "title": "Лучшие героини (Аша)",
+    "slug": "luchshie-geroini-asha",
+    "number": 21,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100021.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100022,
+    "title": "Кошки и котята (кошечка Мари)",
+    "slug": "koshki-i-kotyata-koshechka-mari",
+    "number": 22,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100022.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100023,
+    "title": "Собаки и щенки (Леди и Бродяга)",
+    "slug": "sobaki-i-schenki-ledi-i-brodyaga",
+    "number": 23,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100023.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100024,
+    "title": "Детки (Дамбо)",
+    "slug": "detki-dambo",
+    "number": 24,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100024.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100025,
+    "title": "Феи, колдуны и маги (Злая королева)",
+    "slug": "fei-kolduny-i-magi-zlaya-koroleva",
+    "number": 25,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100025.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100026,
+    "title": "Семья (Лило и Стич)",
+    "slug": "semya-lilo-i-stich",
+    "number": 26,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100026.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100027,
+    "title": "Фантастические существа (Дракон)",
+    "slug": "fantasticheskie-suschestva-drakon",
+    "number": 27,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100027.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100028,
+    "title": "Женская сила (Girl Power, Эльза)",
+    "slug": "zhenskaya-sila-girl-power-elza",
+    "number": 28,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100028.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100029,
+    "title": "Маленькие зверята (Мышата)",
+    "slug": "malenkie-zveryata-myshata",
+    "number": 29,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100029.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100030,
+    "title": "Любовные истории (Золушка)",
+    "slug": "lyubovnye-istorii-zolushka",
+    "number": 30,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100030.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100031,
+    "title": "Таинственные послания (Покахонтас)",
+    "slug": "tainstvennye-poslaniya-pokahontas",
+    "number": 31,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100031.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100032,
+    "title": "Природа (Лис)",
+    "slug": "priroda-lis",
+    "number": 32,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100032.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100033,
+    "title": "Пиксар. Том 1 (Вуди Прайд)",
+    "slug": "piksar-tom-1-vudi-prayd",
+    "number": 1,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100033.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100034,
+    "title": "Пиксар. Том 2 (Базз Лайтер)",
+    "slug": "piksar-tom-2-bazz-layter",
+    "number": 2,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100034.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100035,
+    "title": "Принцессы (Русалочка)",
+    "slug": "printsessy-rusalochka",
+    "number": 35,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100035.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100036,
+    "title": "Сезоны (Олаф)",
+    "slug": "sezony-olaf",
+    "number": 36,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100036.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100037,
+    "title": "Витражи (Шрам)",
+    "slug": "vitrazhi-shram",
+    "number": 37,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100037.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100038,
+    "title": "Под океаном (Лило)",
+    "slug": "pod-okeanom-lilo",
+    "number": 38,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100038.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100039,
+    "title": "Злодеи (Шрам)",
+    "slug": "zlodei-shram",
+    "number": 39,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100039.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100040,
+    "title": "Зима (Топотун)",
+    "slug": "zima-topotun",
+    "number": 40,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100040.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100041,
+    "title": "Микки и друзья (Микки Маус)",
+    "slug": "mikki-i-druzya-mikki-maus",
+    "number": 41,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100041.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100042,
+    "title": "Микки, Дональд и компания (Микки Маус)",
+    "slug": "mikki-donald-i-kompaniya-mikki-maus",
+    "number": 42,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100042.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100043,
+    "title": "Луни Тюнз том 1",
+    "slug": "luni-tyunz-tom-1",
+    "number": 43,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100043.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100044,
+    "title": "Луни Тюнз том 2",
+    "slug": "luni-tyunz-tom-2",
+    "number": 44,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100044.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100045,
+    "title": "Луни Тюнз том 3",
+    "slug": "luni-tyunz-tom-3",
+    "number": 45,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100045.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100046,
+    "title": "Портреты (Стич)",
+    "slug": "portrety-stich",
+    "number": 46,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100046.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100047,
+    "title": "Таинственные послания (Акуна Матата)",
+    "slug": "tainstvennye-poslaniya-akuna-matata",
+    "number": 47,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100047.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100048,
+    "title": "Таинственные послания (Суперсемейка)",
+    "slug": "tainstvennye-poslaniya-supersemeyka",
+    "number": 48,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100048.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100049,
+    "title": "BESTIAIRE по треугольникам (Шрам)",
+    "slug": "bestiaire-po-treugolnikam-shram",
+    "number": 49,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100049.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100050,
+    "title": "По кругам (Симба)",
+    "slug": "po-krugam-simba",
+    "number": 50,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100050.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100051,
+    "title": "Обманка том 2 (Мерида)",
+    "slug": "obmanka-tom-2-merida",
+    "number": 51,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100051.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100052,
+    "title": "Сборник лучшее (Белоснежка)",
+    "slug": "sbornik-luchshee-belosnezhka",
+    "number": 52,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100052.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100053,
+    "title": "Сборник лучшее (Симба)",
+    "slug": "sbornik-luchshee-simba",
+    "number": 53,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100053.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100054,
+    "title": "Сборник лучшее природа (Лис и пес)",
+    "slug": "sbornik-luchshee-priroda-lis-i-pes",
+    "number": 54,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100054.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100055,
+    "title": "Великая классика (Красавица и чудовище)",
+    "slug": "velikaya-klassika-krasavitsa-i-chudovische",
+    "number": 55,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100055.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100056,
+    "title": "Маленькие принцессы и герои (Моана)",
+    "slug": "malenkie-printsessy-i-geroi-moana",
+    "number": 56,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100056.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100057,
+    "title": "маленькие принцессы и герои (Моана)",
+    "slug": "malenkie-printsessy-i-geroi-moana",
+    "number": 57,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100057.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100058,
+    "title": "Принцы и герои (Эрик)",
+    "slug": "printsy-i-geroi-erik",
+    "number": 58,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100058.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100059,
+    "title": "Ледниковый период",
+    "slug": "lednikovyy-period",
+    "number": 59,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100059.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100060,
+    "title": "Классика, специальное издание (Маугли)",
+    "slug": "klassika-spetsialnoe-izdanie-maugli",
+    "number": 60,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100060.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100061,
+    "title": "Великая классика, простая (Алладин)",
+    "slug": "velikaya-klassika-prostaya-alladin",
+    "number": 61,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100061.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100062,
+    "title": "Герои и злодеи (Геркулес)",
+    "slug": "geroi-i-zlodei-gerkules",
+    "number": 62,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100062.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100063,
+    "title": "Пиксар лучшее (Головоломка)",
+    "slug": "piksar-luchshee-golovolomka",
+    "number": 63,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100063.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100064,
+    "title": "Маленькие принцессы (Покахонтас)",
+    "slug": "malenkie-printsessy-pokahontas",
+    "number": 64,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100064.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100065,
+    "title": "Моана",
+    "slug": "moana",
+    "number": 65,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100065.jpg",
+    "universe": "Disney Classic"
+  },
+  {
+    "id": 100066,
+    "title": "Русалочка",
+    "slug": "rusalochka",
+    "number": 66,
+    "releaseYear": null,
+    "coverImage": "https://example.com/volumes/100066.jpg",
+    "universe": "Disney Classic"
+  }
+]

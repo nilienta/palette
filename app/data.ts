@@ -34,3 +34,56 @@ export async function getGames() {
     ],
   };
 }
+
+import charactersData from "./json-db/characters.json";
+import volumesData from "./json-db/volumes.json";
+import cartoonsData from "./json-db/cartoons.json";
+import type {
+  Character,
+  Volume,
+  Cartoon,
+  CharacterVolume,
+} from "./json-db/types";
+
+export const characters: Character[] = charactersData;
+export const volumes: Volume[] = volumesData;
+export const cartoons: Cartoon[] = cartoonsData;
+
+const DB_PATH = "/json-db";
+
+async function loadJson(file: string) {
+  const response = await fetch(`${DB_PATH}/${file}`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to load ${file}`);
+  }
+
+  return response.json();
+}
+
+export async function getVolumeById(volumeId: number) {
+  const [volumes, characters, characterVolumes] = (await Promise.all([
+    loadJson("volumes.json"),
+    loadJson("characters.json"),
+    loadJson("character_volumes.json"),
+  ])) as [Volume[], Character[], CharacterVolume[]];
+
+  const volume = volumes.find((v) => v.id === volumeId);
+
+  if (!volume) {
+    throw new Error("Volume not found");
+  }
+
+  const characterIds = characterVolumes
+    .filter((rel) => rel.volumeId === volumeId)
+    .map((rel) => rel.characterId);
+
+  const volumeCharacters = characters.filter((character) =>
+    characterIds.includes(character.id)
+  );
+
+  return {
+    ...volume,
+    characters: volumeCharacters,
+  };
+}

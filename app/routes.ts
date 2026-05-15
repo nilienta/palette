@@ -13,6 +13,8 @@ export default [
     route("/advent", "routes/advent.tsx"),
     route("/about", "routes/about.tsx"),
     route("/other", "routes/other.tsx"),
+    route("/encyclopedia", "routes/encyclopedia.tsx"),
+    route("/encyclopedia-disney", "routes/encyclopedia-disney.tsx"),
     route("/order/:id", "routes/order.tsx"),
     route("/game/:id", "routes/game.tsx"),
   ]),
